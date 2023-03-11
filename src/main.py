@@ -77,9 +77,7 @@ class VM:
         self.stack.append(obj)
 
     def pop(self) -> KCLObject:
-        last = self.stack[len(self.stack)-1]
-        self.stack = self.stack[:len(self.stack)-1]
-        return last
+        return self.stack.pop()
 
     def peek_nth(self, i: int) -> KCLObject:
         return self.stack[len(self.stack)-i]
